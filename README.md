@@ -6,7 +6,8 @@ Scraping list adalah aplikasi scraping yang digunakan untuk menambang data di we
 file masukan yang didukung:
 - excel
 - csv
-- txt
+- txt.
+
 File keluaran atau hasil yang di dukung:
 - excel
 - csv
