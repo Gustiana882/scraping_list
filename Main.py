@@ -77,7 +77,7 @@ class Scrape:
 			print("pilih html yang ingin di ambil")
 			print("[1] Alamat link")
 			print("[2] String")
-			self.sp = input("masukan pilihan : ")
+			self.sf = input("masukan pilihan : ")
 		else:
 			pass
 		
@@ -89,34 +89,32 @@ class Scrape:
 			self.page()
 			
 		try:
-				
-				
-				print(self.default+"\n============================================\n")
-				print("mencoba koneksi index ke : "+str(self.index))
-				print("addres : "+str(url))
-				get = requests.get(url)
-				print("status url : "+self.gren+str(get.status_code)+" ok")
-				self.content = BeautifulSoup(get.content, "html.parser")
+					
+			print(self.default+"\n============================================\n")
+			print("mencoba koneksi index ke : "+str(self.index))
+			print("addres : "+str(url))
+			get = requests.get(url)
+			print("status url : "+self.gren+str(get.status_code)+" ok")
+			self.content = BeautifulSoup(get.content, "html.parser")
 				
 		except:
-				print(self.red+"internet error! silahkan cek koneksi internet anda")
-				time.sleep(3)
-				self.page()
+			print(self.red+"internet error! silahkan cek koneksi internet anda")
+			time.sleep(3)
+			self.page()
 				
 				
 		
-		
-		if(str(self.sp) == "1"):
+		if(str(self.sf) == "1"):
 			
-				self.find_link()
+			self.find_link()
 			
-		elif(str(self.sp) == "2"):
+		elif(str(self.sf) == "2"):
 			
-				self.find_string()
+			self.find_string()
 			
 		else:
 			
-				print("menu salah")
+			print("menu salah")
 	
 	
 	#fungsi scrap alamat link
@@ -173,6 +171,7 @@ class Scrape:
 		self.df = pandas.DataFrame(data_array)
 		print(self.df)	
 
-		
-Scrape()
+	
+if(__name__ == "__main__"):
+	Scrape()
 
